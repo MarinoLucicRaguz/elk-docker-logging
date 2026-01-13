@@ -27,17 +27,6 @@ app.get("/error", (req, res) => {
   res.status(500).send("Error occurred");
 });
 
-app.listen(3000, () => {
-  console.log(
-    JSON.stringify({
-      level: "info",
-      service: "demo-app",
-      message: "Application started on port 3000",
-      timestamp: new Date().toISOString(),
-    })
-  );
-});
-
 app.get("/auth", (req, res) => {
   console.log(
     JSON.stringify({
@@ -62,4 +51,15 @@ app.get("/payment", (req, res) => {
   );
 
   res.send("Payment simulated request");
+});
+
+app.listen(3000, () => {
+  console.log(
+    JSON.stringify({
+      level: "info",
+      service: "demo-app",
+      message: "Application started on port 3000",
+      timestamp: new Date().toISOString(),
+    })
+  );
 });
